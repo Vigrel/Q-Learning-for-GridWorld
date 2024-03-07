@@ -36,8 +36,8 @@ def save_map(game_map):
     map_name = randomname.get_name().replace("-", "_").upper()
     with open("worlds.py", "a") as file:
         file.write(f"\n{map_name} = ''' \n")
-        file.writelines("".join(row) + "\n" for row in game_map)
-        file.write("'''\n")
+        file.writelines("    " + "".join(row) + "\n" for row in game_map)
+        file.write("    '''\n")
 
 
 game_map = generate_map(20, 0.05, 0.02, 0.10)
